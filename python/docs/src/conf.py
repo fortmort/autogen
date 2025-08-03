@@ -45,6 +45,7 @@ extensions = [
     "myst_nb",
     "sphinxcontrib.autodoc_pydantic",
     "_extension.code_lint",
+    "_extension.json_builder",
 ]
 suppress_warnings = ["myst.header"]
 
@@ -68,6 +69,7 @@ myst_enable_extensions = [
     "linkify",
     "strikethrough",
 ]
+
 
 if (path := os.getenv("PY_DOCS_DIR")) is None:
     path = "dev"
@@ -170,7 +172,8 @@ code_lint_path_prefix = "reference/python"
 nb_mime_priority_overrides = [
   ('code_lint', 'image/jpeg', 100),
   ('code_lint', 'image/png', 100),
-  ('code_lint', 'text/plain', 100)
+  ('code_lint', 'text/plain', 100),
+  ('jsondata', 'text/plain', 0)
 ]
 
 rediraffe_redirects = {
